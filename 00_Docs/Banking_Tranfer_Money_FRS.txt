@@ -1,0 +1,121 @@
+
+**Bài tập: Viết test case cho tính năng “Transfer Money” trong Internet Banking**
+
+Bạn là QA cho một hệ thống Internet Banking. Chức năng **Transfer Money** (chuyển tiền nội bộ trong cùng ngân hàng) có các yêu cầu sau:
+
+---
+
+**1. Mô tả nghiệp vụ**
+
+Người dùng đăng nhập vào Internet Banking, vào màn hình **Transfer Money**:
+
+Trường nhập:
+- `From Account`: Tài khoản nguồn (dropdown, đã được load sẵn).
+- `To Account`: Số tài khoản người nhận (gõ tay).
+- `Amount`: Số tiền muốn chuyển.
+- `Description`: Nội dung chuyển tiền (optional, tối đa 100 ký tự).
+- `OTP`: Mã xác thực 6 số được gửi qua SMS.
+
+Quy tắc nghiệp vụ:
+
+1. **Ràng buộc số tiền (`Amount`)**
+   - Đơn vị: VND.
+   - Min per transaction: 50.000 VND.
+   - Max per transaction: 200.000.000 VND.
+   - Tổng limit trong ngày cho mỗi tài khoản: 500.000.000 VND.
+   - Số tiền phải là **bội số của 1.000 VND**.
+
+2. **Ràng buộc tài khoản**
+   - `From Account` phải là tài khoản **Active** và có số dư khả dụng ≥ `Amount + fee`.
+   - `To Account`:
+     - Phải tồn tại trong hệ thống.
+     - Không được trùng với `From Account`.
+     - Nếu là tài khoản **Dormant/Blocked** → từ chối giao dịch.
+
+3. **OTP**
+   - OTP có hiệu lực trong 3 phút.
+   - Sai OTP quá 5 lần liên tiếp → khóa chức năng chuyển tiền trong 30 phút.
+   - Nếu OTP hết hạn → báo lỗi “OTP expired”.
+
+4. **Phí chuyển tiền**
+   - Nếu `Amount < 100.000.000` → phí = 3.300 VND.
+   - Nếu `Amount ≥ 100.000.000` → phí = 5.500 VND.
+   - Nếu user là **VIP** → miễn phí (0 VND) cho mọi giao dịch.
+   - Phí bị trừ vào `From Account`.
+
+5. **Trạng thái giao dịch & tài khoản**
+   - Ban đầu giao dịch ở trạng thái `INITIATED`.
+   - Sau khi nhập OTP đúng:
+     - Nếu đủ số dư và mọi điều kiện ok → `SUCCESS` và trừ tiền.
+     - Nếu ngân hàng người nhận có sự cố (mô phỏng lỗi hệ thống) → `PENDING` (treo) và retry sau.
+   - Tài khoản người dùng có thể có các trạng thái:
+     - `Active` → được phép chuyển tiền.
+     - `Locked` → không cho vào màn hình chuyển tiền.
+     - `Limited` → chỉ cho phép tối đa 50.000.000 VND/ngày.
+
+---
+
+**2. Yêu cầu bài tập – Ứng dụng 4 kỹ thuật**
+
+1. **Phân vùng tương đương (Equivalence Partitioning)**
+   - Với trường `Amount`, `To Account`, `OTP`:
+     - Xác định các phân vùng **valid** và **invalid**.
+     - Ví dụ với `Amount`:  
+       - < 50.000 (invalid)  
+       - 50.000–200.000.000 (valid, chia hết cho 1.000)  
+       - > 200.000.000 (invalid)  
+       - Không chia hết cho 1.000 (invalid)
+   - Thiết kế một tập test case tối thiểu nhưng cover được tất cả phân vùng.
+
+2. **Giá trị biên (Boundary Value Analysis)**
+   - Áp dụng cho:
+     - `Amount` (50.000, 49.000, 51.000, 200.000.000, 199.999.000, 200.001.000…)
+     - Daily limit (499.000.000, 500.000.000, 501.000.000…)
+     - Số lần nhập OTP sai (4, 5, 6 lần).
+   - Viết các test case tập trung quanh biên.
+
+3. **Bảng quyết định (Decision Table)**
+   - Cho logic tính phí:
+     - Điều kiện:
+       - C1: `Amount < 100.000.000` / `Amount ≥ 100.000.000`.
+       - C2: User là VIP / không VIP.
+     - Hành động:
+       - A1: Phí = 3.300.
+       - A2: Phí = 5.500.
+       - A3: Phí = 0.
+   - Xây một decision table và từ đó tạo test case:
+     - Mỗi rule trong bảng → ít nhất 1 test case verify số tiền bị trừ và số dư còn lại.
+
+4. **Chuyển đổi trạng thái (State Transition Testing)**
+   - Phần A – Trạng thái tài khoản:
+     - States: `Active`, `Locked`, `Limited`.
+     - Events: Đăng nhập, bị khóa do OTP sai, admin unlock, v.v. (bạn có thể giả lập thêm rule nếu cần).
+     - Viết test case để đảm bảo:
+       - `Active` → chuyển sang `Locked` sau X lần OTP sai.
+       - `Locked` → không thể thực hiện chuyển tiền.
+       - `Limited` → bị chặn khi cố gắng vượt 50.000.000 VND/ngày.
+   - Phần B – Trạng thái giao dịch:
+     - States: `INITIATED`, `PENDING`, `SUCCESS`, `FAILED`.
+     - Events:
+       - `OTP_OK`, `OTP_WRONG`, `SYSTEM_ERROR`, `TIMEOUT`.
+     - Viết test case để kiểm tra từng transition:
+       - `INITIATED` + `OTP_OK` + điều kiện ok → `SUCCESS`.
+       - `INITIATED` + `SYSTEM_ERROR` → `PENDING`.
+       - `INITIATED` + OTP hết hạn → `FAILED` (OTP expired).
+
+---
+
+**3. Output bạn cần làm**
+
+Từ bài toán trên, hãy tự xây cho mình:
+- **Danh sách test case** (có thể ở dạng bảng CSV giống Testcases.csv của bạn) gồm:
+  - Một nhóm test case cho phân vùng tương đương.
+  - Một nhóm cho giá trị biên.
+  - Một nhóm dựa trên bảng quyết định phí.
+  - Một nhóm cho chuyển đổi trạng thái (tài khoản & giao dịch).
+- Mỗi test case nên có tối thiểu:
+  - `Test Case ID`, `Title`, `Preconditions`, `Steps`, `Test Data`, `Expected Result`.
+
+Nếu bạn muốn, ở bước tiếp theo mình có thể:
+- Lấy **một kỹ thuật trong bài này** (ví dụ: bảng quyết định tính phí),  
+- Viết mẫu 3–5 test case chi tiết bằng tiếng Anh theo đúng format mà bạn đang dùng trong Testcases.csv để bạn dùng làm template.

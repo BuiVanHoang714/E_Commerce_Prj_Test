@@ -1,0 +1,179 @@
+﻿Test Case ID,Test Scenario ,Test Case Purpose,Pre-requisites,Test Steps,Test Data,Expected Result (ER),Actual Result,Priority,Result,Comments
+<< Test Scenarios,,,,,,,,,,
+TC_RF_001,"(TS_001) 
+Register Functionality",Validate Registering an Account by providing only the Mandatory fields,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into the Mandatory Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm and  Privacy Policy Fields)
+4. Click on 'Continue' button (ER-1)
+5. Click on 'Continue' button that is displayed in the 'Account Success' page (ER-2)",Not Applicable,"1. User should be logged in,  taken to 'Account Succcess' page and proper details should be displayed on the page
+2. User should be taken to 'Account' page and a confirm email should be sent to the registed email address",,,,
+TC_RF_002,"(TS_001) 
+Register Functionality",Validate 'Thank you for registering' email is sent to the registered email address as a confirmation for registering the account,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into the Mandatory Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm and  Privacy Policy Fields)
+4. Click on 'Continue' button  
+5. Check the email address used for registering the account (Verify ER-1, ER-2. ER-3)
+6. Click on the Login page link from the Email body (Verify ER-4)",Not Applicable,"1. Validate a confirmation email for registering the account is sent to the registered email address. 
+2. Validate the Email subject, body and from address of the received email.
+3. Validate there is a link to the login page provided in the Email body
+4. User should be taken to the Login page",,,,
+TC_RF_003,"(TS_001) 
+Register Functionality",Validate Registering an Account by providing all the fields,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm, Newsletter and  Privacy Policy Fields)
+4. Click on 'Continue' button (ER-1)
+5. Click on 'Continue' button that is displayed in the 'Account Success' page (ER-2)",Not Applicable,"1. User should be logged in,  taken to 'Account Succcess' page and proper details should be displayed on the page
+2. User should be taken to 'Account' page ",,,,
+TC_RF_004,"(TS_001) 
+Register Functionality","Validate proper notification messages are displayed for the mandatory fields, when you don't provide any data in the fields in the 'Register Account' page and submit",1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Don't enter anything into the fields
+4. Click on 'Continue' button (ER-1)
+",Not Applicable,"1. The below warning messages should be displayed for the respective fields:
+For First Name field, the warning message 'First Name must be between 1 and 32 characters!' should be displayed
+For Last Name field, the warning message 'Last Name must be between 1 and 32 characters!' should be displayed
+For E-Mail field, the warning message 'E-Mail Address does not appear to be valid!' should be displayed
+For Telephone field, the warning message 'Telephone must be between 3 and 32 characters!' should be displayed
+For Password field, the warning message 'Password must be between 4 and 20 characters!' should be displayed
+For Privacy Policy field, the warning message 'Warning: You must agree to the Privacy Policy!' should be displayed on the top",,,,
+TC_RF_005,"(TS_001) 
+Register Functionality",Validate Registering an Account when 'Yes' option is selected for Newsletter field,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm and  Privacy Policy Fields)
+4.Click on 'Yes' radio option for Newsletter 
+5. Click on 'Continue' button (ER-1)
+6. Click on 'Continue' button that is displayed in the 'Account Success' page (ER-2)
+7. Click on 'Subscribe/unsubscribe to newsletter' option (ER-3)",Not Applicable,"1. User should be logged in,  taken to 'Account Succcess' page and proper details should be displayed on the page
+2. User should be taken to 'Account' page 
+3. 'Yes' option should be displayed as selected by default in the Newsletter page",,,,
+TC_RF_006,"(TS_001) 
+Register Functionality",Validate Registering an Account when 'No' option is selected for Newsletter field,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm and  Privacy Policy Fields)
+4.Click on 'No'  radio option for Newsletter 
+5. Click on 'Continue' button (ER-1)
+6. Click on 'Continue' button that is displayed in the 'Account Success' page (ER-2)
+7. Click on 'Subscribe/unsubscribe to newsletter' option (ER-3)",Not Applicable,"1. User should be logged in,  taken to 'Account Succcess' page and proper details should be displayed on the page
+2. User should be taken to 'Account' page 
+3. 'No' option should be displayed as selected by default in the Newsletter page",,,,
+TC_RF_007,"(TS_001) 
+Register Functionality",Validate different ways of navigating to 'Register Account' page,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option (ER-1) 
+3. Click on 'My Account' Drop menu
+4. Click on 'Login' option 
+5. Click  on 'Continue' button inside 'New Customer' box (ER-1) 
+6. Repeat Steps 3 and 4
+7. Click on 'Register' option from the Right Column options (ER-1) ",Not Applicable,1. User should be taken to 'Register Account' page,,,,
+TC_RF_008,"(TS_001) 
+Register Functionality",Validate Registering an Account by entering different passwords into 'Password' and 'Password Confirm' fields,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Newsletter and  Privacy Policy Fields)
+4. Enter any password say '12345' into the 'Password' field
+5. Enter any different password say 'abcde' into the 'Passsword Confirm' field
+6. Click on 'Continue' button (ER-1)",Not Applicable,"1.Account should not be created, instead a warning message - 'Password confirmation does not match password!' should be displayed under 'Password Confirm' field",,,,
+TC_RF_009,"(TS_001) 
+Register Functionality",Validate Registering an Account by providing the existing account details (i.e. existing email address),1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter existing Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm, Newsletter and  Privacy Policy Fields) - <Refer Test Data>
+4. Click on 'Continue' button (ER-1)","First Name - Pavan
+Last Name - B
+E-Mail - hoangga714@gmail.com
+Telephone - 814240XXXX
+Password - 12345
+Password Confirm - 12345","1. Account should not be created again, instead the warning messsage -  'Warning: E-Mail Address is already registered!' should be displayed",,,,
+TC_RF_010,"(TS_001) 
+Register Functionality",Validate Registering an Account by providing an invalid email address into the E-Mail field,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name,Telephone, Password, Password Confirm, Newsletter and  Privacy Policy Fields) 
+4. Enter invalid email address into the E-Mail Field - <Refer Test Data>
+5. Click on 'Continue' button (ER-1)","Try all below invalid email address formats:
+1) hoangga714
+2) hoangga714@
+3) hoangga714@gmail
+4) hoangga714@gmail.com
+","1. Account should not be created, instead a proper field level warning message or page level warning message to provide valid email address should be displayed",,,,
+TC_RF_011,"(TS_001) 
+Register Functionality",Validate Registering an Account by providing an invalid phone number,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new  Account Details into all the Fields (First Name, Last Name,E-Mail, Password, Password Confirm, Newsletter and  Privacy Policy Fields)
+4. Enter invalid phone number into the Telephone Field - <Refer Test Data>
+5. Click on 'Continue' button (ER-1)","Try all below invalid phone formats:
+1) 111
+2) abcde
+","1. Account should not be created, instead a proper warning message should be displayed",,,,
+TC_RF_012,"(TS_001) 
+Register Functionality",Validate Registering an Account by using the Keyboard keys,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm, Newsletter and  Privacy Policy Fields) by using Keyboard keys (Tab, Spacebar and Enter)
+4. Click on 'Continue' button (ER-1)",Not Applicable,"1. User should be logged in,  taken to 'Account Succcess' page and proper details should be displayed on the page",,,,
+TC_RF_013,"(TS_001) 
+Register Functionality",Validate all the fields in the Register Account page have the proper placeholders,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. View the First Name, Last Name, E-Mail, Telephone, Password, Password Confirm fields for Placeholders (ER-1)",Not Applicable,1. Proper Placeholder texts should be displayed in these fields,,,,
+TC_RF_014,"(TS_001) 
+Register Functionality",Validate all the mandatory fields in the Register Account page are marked with red color * symbol,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Check the Fields - First Name, Last Name, E-Mail, Telephone, Password, Password Confirm and Privacy Policy",Not Applicable,1. All the specified Fields in the Test Steps should be marked with red color * symbol,,,,
+TC_RF_015,"(TS_001) 
+Register Functionality",Validate the details that are provided while Registering an Account are stored in the Database ,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm, Newsletter and  Privacy Policy Fields)
+4. Click on 'Continue' button (ER-1)
+",Not Applicable,1. All the details entered while registering the account are successfully stored in the Database,,,,
+TC_RF_016,"(TS_001) 
+Register Functionality",Validate whether the Mandatory fields in the Register Account page are accepting only spaces,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter spaces into the Mandatory Fields (First Name, Last Name, E-Mail,Telephone, Password and Password Confirm)
+4. Click on 'Continue' button (ER-1)
+",Not Applicable,1. Warning message should be displayed for these Mandatory fields,,,,
+TC_RF_017,"(TS_001) 
+Register Functionality",Validate whether the Password fields in the Register Account page are following Password Complexity Standards,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Newsletter and  Privacy Policy Fields)
+4. Check entering simple passwords (Not following Password Complexity Standars' i.e. Size of password as 8, password should contain atleat one number, symbol, lower case letter and upper case letters) - <Refer Test Data>
+5. Click on 'Continue' button (ER-1)",12345,1. Warning message should be displayed for following Password Complexity Standards,,,,
+TC_RF_018,"(TS_001) 
+Register Functionality","Validate whether the fields in the Register Account page are according the Client requirements (Examples- Height, Width, Number of characters etc.)",1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Check all the fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm, Newsletter and  Privacy Policy Fields) including the 'Continue' button (ER-1)",Not Applicable,1. Text fields should abide to the Client requirements,,,,
+TC_RF_019,"(TS_001) 
+Register Functionality",Validate whether the leading and trailing spaces entered into the Register Account fields are trimmed,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm, Newsletter and  Privacy Policy Fields) - by adding leading and trailing spaces to the applicable fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm)
+4. Click on 'Continue' button (ER-1)
+",Not Applicable,1. The leading and trailing spaces entered into these fields should automatically get trimmed on successful account creation,,,,
+TC_RF_020,"(TS_001) 
+Register Functionality",Validate whether the 'Privacy Policy' checkbox option is not selected by default,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. View the 'Privacy Policy' checkbox option (ER-1)",Not Applicable,1. 'Privacy Policy' checkbox option is not selected by default,,,,
+TC_RF_021,"(TS_001) 
+Register Functionality",Validate Registering the Account without selecting the 'Privacy Policy' checkbox option,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Password, Password Confirm and Newsletter Fields) 
+4. Don't select the 'Privacy Policy' checkbox option
+4. Click on 'Continue' button (ER-1)
+",Not Applicable,1. Warning message - 'Warning: You must agree to the Privacy Policy!' should be displayed,,,,
+TC_RF_022,"(TS_001) 
+Register Functionality",Validate the Password text entered into the 'Password' and 'Password Confirm' field of 'Register Account' functionality is toggled to hide its visibility,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter some Password text into the 'Password' and 'Password Confirm' fields (ER-1)",Not Applicable,1.Password text entered into 'Password' and 'Password Confirm' fields need to be toggled to hide its visibilty (It should be hidden by displaying * or . Symbols),,,,
+TC_RF_023,"(TS_001) 
+Register Functionality",Validate navigating to other pages using the options or links provided on the 'Register Account' page ,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Try clicking on 'login page' link, 'privacy policy' link, 'Right Column' options, Menu options, Header and Footer options and any other options",Not Applicable,1. User should be navigated to the respective pages without any problems,,,,
+TC_RF_024,"(TS_001) 
+Register Functionality","Validate Registring an Account, by filling 'Password' field and not filling 'Password Confirm' field",1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option 
+3. Enter new Account Details into all the Fields (First Name, Last Name, E-Mail,Telephone, Password, Newsletter and  Privacy Policy Fields)
+4. Don't enter into 'Password Confirm' field
+5. Click on 'Continue' button (ER-1)
+",Not Applicable,1. Warning message - 'Password confirmation does not match password!' should be displayed under 'Password Confirm' field,,,,
+TC_RF_025,"(TS_001) 
+Register Functionality","Validate the Breadcrumb, Page Heading, Page URL, Page Title of 'Register Account' Page",1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option ",Not Applicable,"1. Proper Breadcrumb, Page Heading, Page URL and Page Title should be displayed",,,,
+TC_RF_026,"(TS_001) 
+Register Functionality",Validate the UI of the 'Register Account' page,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option ",Not Applicable,1. Proper and good UI should be displayed on the 'Register Account' page,,,,
+TC_RF_027,"(TS_001) 
+Register Functionality",Validate 'Register Account' functionality in all the supported environments,1. Open the Application (https://demo.opencart.com) in any Browser,"1. Click on 'My Account' Drop menu
+2. Click on 'Register' option ",Not Applicable,1.'Register Account' functionality should work in all the supported environments,,,,
