@@ -1,7 +1,4 @@
 # Checklist review test case Register
-
-Tài liệu này dùng để review chất lượng + độ bao phủ của bộ test case **Register** (tham chiếu từ file [01_BaseLine/BL01/E Commerce Project_Register.csv](../01_BaseLine/BL01/E%20Commerce%20Project_Register.csv)).
-
 ## 1) Coverage map (tham chiếu nhanh theo Test Case ID)
 
 - Happy path
