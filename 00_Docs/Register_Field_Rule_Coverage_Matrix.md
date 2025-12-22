@@ -2,7 +2,6 @@
 
 Mục tiêu: nhìn nhanh **mỗi field đang được cover rule nào** và **test case nào cover**.
 
-Nguồn tham chiếu: [01_BaseLine/BL01/E Commerce Project_Register.csv](../01_BaseLine/BL01/E%20Commerce%20Project_Register.csv)
 
 ## Quy ước
 
