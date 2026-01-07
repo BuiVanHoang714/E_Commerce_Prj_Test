@@ -56,3 +56,43 @@
 - [ ] Khi hover chuột, button được highlight
 - [ ] Các button trên toàn site có style, font, màu sắc đồng nhất
 - [ ] Trong alert box: Enter chọn OK, Escape chọn Cancel
+
+## 5. Checkbox
+
+- [ ] Kiểm tra trạng thái Enabled/Disabled đúng theo yêu cầu
+- [ ] Xác minh trạng thái mặc định: Checked/Unchecked
+- [ ] Nhãn (Label) của checkbox phải chính xác, rõ ràng
+- [ ] Có thể chọn/bỏ chọn bằng chuột
+- [ ] Có thể chọn/bỏ chọn bằng Tab + Spacebar trên bàn phím
+- [ ] Checkbox bị Disabled thì không được chỉnh sửa
+- [ ] Checkbox phải căn chỉnh đúng với label và các thành phần khác trên trang
+
+## 6. Radio Button
+
+- [ ] Kiểm tra radio button mặc định có được chọn đúng theo yêu cầu
+- [ ] Trong một nhóm, chỉ một lựa chọn được chọn tại một thời điểm
+- [ ] Nhãn (Label) phải rõ ràng, đúng nội dung
+- [ ] Có thể chọn bằng chuột
+- [ ] Có thể chọn bằng Tab + phím mũi tên trên bàn phím
+- [ ] Radio button bị Disabled thì không được chỉnh sửa
+- [ ] Radio button phải căn chỉnh đúng với label, nhóm và bố cục trang
+
+## 7. Hyperlink
+
+- [ ] Hyperlink phải có màu chuẩn (ví dụ: xanh dương) và đồng nhất trên toàn site
+- [ ] Khi hover chuột, màu phải thay đổi đúng thiết kế
+- [ ] Click bằng chuột phải dẫn đến đúng trang
+- [ ] Click bằng Tab + Enter phải hoạt động chính xác
+- [ ] Ctrl + Click phải mở link trong tab mới
+- [ ] Không có hyperlink bị gãy/broken
+- [ ] Hyperlink phải căn chỉnh đúng với nội dung xung quanh
+- [ ] Văn bản hyperlink phải đúng chính tả, không lỗi chữ
+
+## 8. Image
+
+- [ ] Hình ảnh phải hiển thị đầy đủ, không bị mất
+- [ ] Hình ảnh phải có độ phân giải tốt, không mờ, không vỡ pixel
+- [ ] Hình ảnh phải căn chỉnh đúng với bố cục, không chồng chéo
+- [ ] Kích thước (height/width) phải đúng yêu cầu thiết kế
+- [ ] Hình ảnh phải hiển thị đúng trong khung chứa và không bị lệch
+- [ ] Đảm bảo hình ảnh responsive trên nhiều màn hình
