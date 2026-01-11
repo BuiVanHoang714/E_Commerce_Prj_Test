@@ -1,0 +1,180 @@
+{
+  "info": {
+    "_postman_id": "b81c0a0b-f630-4236-bb0d-7757db2d214d",
+    "name": "RegresIn_Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GetUsers",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "af902de1-5709-4cab-8998-fb2a328db4a5",
+            "exec": [
+              "//lodash\r",
+              "const _ = require('lodash');\r",
+              "pm.collectionVariables.set(\"int\", _.random(1, 12));\r",
+              "\r",
+              "pm.collectionVariables.set(\"int1\", _.random(12, true));"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "efb954f8-3134-4837-b3d1-fafa77ef19f5",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response time is less than 200ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(700);\r",
+              "\r",
+              "    \r",
+              "pm.test(\"Your test name\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.value).to.eql(100);\r",
+              "});\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "id": "18f4477a-c3ca-4a48-8c98-c69c78a37a5a",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_24196c7b0e7c466daa0bd2672421b210"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}api/users/:id",
+          "host": [
+            "{{base_url}}api"
+          ],
+          "path": [
+            "users",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "{{int}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create User",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "3baf4cba-fc1f-4802-9ed2-41c15d04162a",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "f5295d50-9ab2-462a-9235-735d5e54b1bf",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "id": "e514c052-b237-43b7-afef-8cc4602659db",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_24196c7b0e7c466daa0bd2672421b210"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"{{$randomEmail}\",\r\n    \"password\": \"{{$randomPassword}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update User",
+      "id": "e424e80f-0e3c-4052-8785-7416a0fa9005",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2",
+              "uuid": "41e57e0a-1a24-464b-b480-0eb0f8749723"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "id": "2b9ca2f3-206f-4a04-a302-ba5cebf76e30",
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "id": "1526dbf4-e9df-4269-abd5-f0fe895f4a16",
+      "value": ""
+    }
+  ]
+}
