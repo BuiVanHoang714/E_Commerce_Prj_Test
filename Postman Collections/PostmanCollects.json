@@ -52,10 +52,14 @@
 				}
 			],
 			"id": "9e611ed8-bf9f-41b0-8ab2-99d808b7c1a6",
+			"protocolProfileBehavior": {
+				"protocolVersion": "auto",
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://www.google.com/",
+				"url": "https://reqres.in/users",
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
 			},
 			"response": []
