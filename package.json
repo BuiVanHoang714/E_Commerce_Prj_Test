@@ -1,0 +1,12 @@
+{
+  "name": "PlaywrightVn_e-commerce-test",
+  "version": "1.0.0",
+  "description": "API Testing project with Newman",
+  "scripts": {
+    "test:api": "newman run \"Postman Collections/PlaywrightVN Collection.postman_collection.json\" -e \"Postman Evironments/PlaywrightVn_Test.postman_environment.json\" -r cli,htmlextra"
+  },
+  "devDependencies": {
+    "newman": "^6.1.0",
+    "newman-reporter-htmlextra": "^1.23.0"
+  }
+}

@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "f78d274e-d66e-4d27-a0cc-bb6b4d038f57",
+		"name": "PlaywrightVN Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "51236659",
+		"_collection_link": "https://hoangga714-9874077.postman.co/workspace/player-bro's-Workspace~6c153bcc-8fd7-4af2-8ac7-2c31d7bc0133/collection/51236659-f78d274e-d66e-4d27-a0cc-bb6b4d038f57?action=share&source=collection_link&creator=51236659"
+	},
+	"item": [
+		{
+			"name": "getProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products.php",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addProductsToCart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"session_id\": \"user123\",\r\n  \"product_id\": 1,\r\n  \"quantity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/cart.php",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cart.php"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"type": "default"
+		}
+	]
+}
