@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "API Testing project with Newman",
   "scripts": {
-    "test:api": "newman run \"Postman Collections/PlaywrightVN Collection.postman_collection.json\" -e \"Postman Evironments/PlaywrightVn_Test.postman_environment.json\" -r cli,htmlextra"
+    "test:playwright": "newman run \"Postman Collections/PlaywrightVN Collection.postman_collection.json\" -e \"Postman Evironments/PlaywrightVn_Test.postman_environment.json\" -r cli,htmlextra",
+    "test:local-server": "newman run \"Postman Collections/Json_Local_Server.json\" -e \"Postman Evironments/PlaywrightVn_Test.postman_environment.json\" -r cli,htmlextra",
+    "test:custom": "newman run"
   },
   "devDependencies": {
     "newman": "^6.1.0",
