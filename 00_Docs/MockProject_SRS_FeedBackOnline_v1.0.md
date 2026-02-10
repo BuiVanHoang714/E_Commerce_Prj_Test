@@ -1,4 +1,4 @@
-# HỆ THỐNG FEEDBACK ONLINE
+ HỆ THỐNG FEEDBACK ONLINE
 
 ## SRS - Tài liệu đặc tả yêu cầu phần mềm
 **Version 1.0**
@@ -172,7 +172,7 @@ Tương tự như chức năng Tạo mới lớp. Riêng TextField **Mã lớp b
 | Tên hành động | Mô tả | Thành công | Thất bại |
 |---------------|-------|------------|----------|
 | Sửa | Mở màn hình Sửa lớp | | |
-| Xóa | Xóa 1 lớp trong danh sách. Hiển thị popup confirm trước khi xóa. | Sau khi xóa thành công thì quay về màn hình Quản lý lớp | |
+| Xóa | Xóa 1 lớp trong danh sách. Hiển thị popup confirm với message "Bạn có chắc chắn muốn xóa lớp này không?" trước khi xóa. | Sau khi xóa thành công thì quay về màn hình Quản lý lớp | |
 
 ---
 
